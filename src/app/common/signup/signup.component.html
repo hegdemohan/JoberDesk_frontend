@@ -1,0 +1,89 @@
+<!-- signup section start -->
+<section class="login-wrapper">
+  <div class="container">
+    <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+      <form>
+        <img class="img-responsive" alt="logo" src="assets/img/logo.png">
+
+        <div data-validate="First Name is required">
+          <span class="label-input100">First Name</span>
+          <input class="form-control input-lg" [(ngModel)]="register.firstName" type="text" name="firstName"
+            placeholder="First Name">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div data-validate="Last Name is required">
+          <span class="label-input100">Last Name</span>
+          <input class="form-control input-lg" [(ngModel)]="register.lastName" type="text" name="lastName"
+            placeholder="Last Name">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div data-validate="Valid email is required: ex@abc.xyz">
+          <span class="label-input100">Email</span>
+          <input class="form-control input-lg" [(ngModel)]="register.emailId" type="text" name="email"
+            placeholder="Email Addess">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div data-validate="Phone number is required: ex@abc.xyz">
+          <span class="label-input100">Phone Number</span>
+          <input class="form-control input-lg" [(ngModel)]="phoneNumber" type="number" min="0" name="phoneNumber"
+            placeholder="Phone number">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div>
+            <span class="label-input100">Address Details</span>
+          <div class="row">
+            <div class="col-xs-4">
+              <input class="form-control input-lg" [(ngModel)]="address.houseNum" type="number" min="0" name="houseNum"
+                placeholder="House Number">
+            </div>
+            <div class="col-xs-8">
+              <input class="form-control input-lg" [(ngModel)]="address.street" type="text" name="street"
+                placeholder="Street">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4">
+              <input class="form-control input-lg" [(ngModel)]="address.pinCode" type="number" min="0" name="pinCode"
+                placeholder="Pin/Zip Code">
+            </div>
+            <div class="col-xs-8">
+              <input class="form-control input-lg" [(ngModel)]="address.city" type="text" name="city"
+                placeholder="City">
+            </div>
+          </div>
+        </div>
+
+        <div data-validate="Password is required">
+          <span class="label-input100">Password</span>
+          <input class="form-control input-lg" type="password" [(ngModel)]="register.password" name="password"
+            placeholder="Password">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div data-validate="Repeat Password is required">
+          <span class="label-input100">Repeat Password</span>
+          <input class="form-control input-lg" type="password" [(ngModel)]="confirmPassword" name="confirmPassword"
+            placeholder="Confirm Password">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div class="container-login100-form-btn">
+          <div class="wrap-login100-form-btn">
+            <button class="btn btn-primary" (click)="signup()">
+              Sign Up
+            </button>
+          </div>
+          <a routerLink="/login" routerLinkActive="active" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+            Sign in
+            <i class="fa fa-long-arrow-right m-l-5"></i>
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- signup section End -->

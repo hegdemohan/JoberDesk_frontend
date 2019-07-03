@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="company-content">
+                <div class="row">
+                    <!-- <div class="col-xs-3">
+                      <span class="company-name"><i class="fa fa-briefcase"></i>{{job.company}}</span>
+                    </div> -->
+                    <div class="col-xs-12">
+                        <h3>{{data.job.job_title}}</h3>
+                    </div>
+                    <div class="col-xs-12 padding-sides-0">
+                        <div class="col-xs-3">
+                            <span><i class="fa fa-user padding-right-5"></i>
+                                {{publisher.firstName}} {{publisher.lastName}}</span>
+                        </div>
+                        <div class="col-xs-9"><i class="fa fa-star padding-right-5"></i>
+                            {{publisher.rating}} / {{publisher.totalRatings}}
+                            <a *ngIf="userLoggedIn=='true'" class="pointer" (click)="rate()"> <span *ngIf="!publishedByMe" >Rate the Publisher</span></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 padding-top-2  padding-sides-0">
+                        <div class="col-xs-3">
+                            <span><i class="fa fa-map-marker padding-right-5"></i>
+                                {{data.job.address.city}}</span>
+                        </div>
+                        <div class="col-xs-3">
+                            <span class="package"><i class="fa fa-money padding-right-5"></i>{{data.job.salary}}
+                                &euro; / Hour</span>
+                        </div>
+                        <div class="col-xs-3">
+                            <span class="package"><i
+                                    class="fa fa-calendar-o padding-right-5"></i>{{data.job.date}}</span>
+                        </div>
+                        <div class="col-xs-12 padding-top-2">
+                            <p>Category : {{data.job.category}}</p>
+                        </div>
+                    </div>
+                    <div *ngIf="publishedByMe" class="info_job col-xs-12">
+                        You are the publisher of this Job.
+                    </div>
+                    <div *ngIf="appliedByMe" class="info_job col-xs-12">
+                        You have already applied to this Job.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-offset-2 col-xs-2 padding-top-7">
+            <button *ngIf="hideButton !='true'" class="btn btn-primary" (click)="apply()"> Apply Now </button>
+        </div>
+        <div class="col-xs-12 padding-top-2">
+            <p>{{data.job.description}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 detailBox">
+            <div class="titleBox">
+                <label>Comment Box</label>
+            </div>
+            <div class="commentBox">
+                <p class="taskDescription">Here you can find the comments for this job by other users.</p>
+            </div>
+            <div class="actionBox">
+                <ul class="commentList">
+                    <div *ngFor="let eachComment of allComments">
+                        <li>
+                            <div>
+                                <span class="bold_italic">{{eachComment.user_name}} :</span>
+                                <div>
+                                    <span class="date sub-text">{{eachComment.date}}</span>
+                                </div>
+                            </div>
+                            <div class="commentText">
+                                <p class=""> {{eachComment.comment}}</p>
+
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+                <div class="info" *ngIf="userLoggedIn == 'false'">
+                    Please Login / Register to Comment
+                </div>
+                <form class="form-inline" role="form" *ngIf="userLoggedIn == 'true'">
+                    <div class="form-group">
+                        <input class="form-control" type="text" [(ngModel)]="commentObject.comment" name="comment"
+                            placeholder="Your comments" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default" (click)="addComment()">Add</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<!-- signup section start -->
+<section class="login-wrapper">
+  <div class="container">
+    <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
+      <form>
+        <img class="img-responsive" alt="logo" src="assets/img/logo.png">
+
+        <div data-validate="First Name is required">
+          <span class="label-input100">First Name</span>
+          <input class="form-control input-lg" [(ngModel)]="editUser.firstName" type="text" name="firstName"
+            placeholder="First Name">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div data-validate="Last Name is required">
+          <span class="label-input100">Last Name</span>
+          <input class="form-control input-lg" [(ngModel)]="editUser.lastName" type="text" name="lastName"
+            placeholder="Last Name">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div data-validate="Valid email is required: ex@abc.xyz">
+          <span class="label-input100">Email</span>
+          <input class="form-control input-lg" [(ngModel)]="editUser.emailId" type="text" name="email"
+            placeholder="Email Addess">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div data-validate="Phone number is required: ex@abc.xyz">
+          <span class="label-input100">Phone Number</span>
+          <input class="form-control input-lg" [(ngModel)]="editUser.phoneNumber" type="text" name="phoneNumber"
+            placeholder="Phone number">
+          <span class="focus-input100"></span>
+        </div>
+
+        <div>
+            <span class="label-input100">Address Details</span>
+          <div class="row">
+            <div class="col-xs-4">
+              <input class="form-control input-lg" [(ngModel)]="address.houseNo" type="number" name="houseNo"
+                placeholder="House Number">
+            </div>
+            <div class="col-xs-8">
+              <input class="form-control input-lg" [(ngModel)]="address.street" type="text" name="street"
+                placeholder="Street">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4">
+              <input class="form-control input-lg" [(ngModel)]="address.pinCode" type="number" name="pinCode"
+                placeholder="Pin/Zip Code">
+            </div>
+            <div class="col-xs-8">
+              <input class="form-control input-lg" [(ngModel)]="address.city" type="text" name="city"
+                placeholder="City">
+            </div>
+          </div>
+        </div>
+
+        <div class="container-login100-form-btn">
+          <div class="wrap-login100-form-btn">
+            <button class="btn btn-primary" (click)="submit()">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- signup section End -->

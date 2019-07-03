@@ -1,0 +1,30 @@
+<!-- Inner Banner -->
+<section class="inner-banner">
+    <div class="container">
+      <div class="caption">
+        <h2>Get your jobs</h2>
+      </div>
+    </div>
+  </section>
+  
+  <section class="jobs">
+  <div class="container" >
+           <div class="row heading"></div>
+             <div class="companies" *ngFor="let item of collection| paginate: { itemsPerPage: 4, currentPage: p }">
+               <div class="company-list">      
+                 <div class="row" >
+                   <div class="col-md-8 col-sm-8" >
+                     <div class="company-content">
+                       <h3>{{item.job}}</h3>
+                       <p><span class="company-name"><i class="fa fa-briefcase"></i>{{item.company}}</span><span class="company-location"><i class="fa fa-map-marker"></i> {{item.location}}</span><span class="package"><i class="fa fa-money"></i>{{item.Pay}}</span></p>
+                       <p>Category : {{item.category}}</p>
+                       <p>{{item.disc}}</p>
+                     </div>
+                   </div>
+                  </div>
+                </div>
+              </div>
+     <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>	  
+  </section>
+  
