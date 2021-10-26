@@ -1,4 +1,6 @@
-# Micproject
+This is a project for HSRW curriculam.
+
+The project is about creating the job listing and allowing applicants to apply for the job. The backend for this project is in this [repository](https://github.com/hegdemohan/django_mic)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
